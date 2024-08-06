@@ -1,24 +1,11 @@
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body, html {
-  height: 100%;
-  font-family: Arial, sans-serif;
-}
-
 .App {
   display: flex;
-  height: 100vh; /* Full viewport height */
-  background-color: #f0f0f0;
+  height: 100vh;
 }
 
 /* Left Sidebar Styling */
 .left-sidebar {
-  width: 300px; /* Fixed width */
+  width: 300px;
   padding: 20px;
   background-color: #ffffff;
   border-right: 1px solid #ddd;
@@ -26,6 +13,19 @@ body, html {
   flex-direction: column;
   align-items: center;
 }
+/* .left-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100%; 
+  padding: 20px;
+  background-color: #ffffff;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
 
 .left-sidebar h2, .left-sidebar h3 {
   margin-bottom: 20px;
@@ -48,37 +48,6 @@ body, html {
   background-color: #e0e0e0;
 }
 
-/* Right Sidebar Styling */
-.right-sidebar {
-  width: 400px; /* Fixed width */
-  padding: 20px;
-  background-color: #ffffff;
-  border-left: 1px solid #ddd;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.right-sidebar h2 {
-  margin-bottom: 20px;
-}
-
-.right-sidebar ul {
-  list-style: none;
-  width: 100%;
-}
-
-.right-sidebar ul li {
-  padding: 10px;
-  cursor: pointer;
-  text-align: center;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.right-sidebar ul li:hover {
-  background-color: #e0e0e0;
-}
 
 /* Main Content Styling */
 .main-content {
@@ -89,6 +58,8 @@ body, html {
   align-items: center;
   padding: 20px;
   overflow-y: auto; /* Add scroll if content overflows */
+  margin-left: 300px; /* Avoid overlapping with the left sidebar */
+  margin-right: 400px; /* Avoid overlapping with the right sidebar */
 }
 
 .image-container {
@@ -120,7 +91,84 @@ body, html {
   border-radius: 5px;
 }
 
+
+/* Right Sidebar Styling */
+.right-sidebar {
+  width: 400px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-left: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.right-sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.right-sidebar ul {
+  list-style: none;
+  width: 100%;
+}
+
+.right-sidebar ul li {
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.right-sidebar ul li:hover {
+  background-color: #e0e0e0;
+}
+
+
+/* Additional styles as needed */
+
+.image-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* Max width for the image container */
+  height: 500px; /* Fixed height */
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+}
+
 /* Attachment Section Styling */
+.main-content {
+  flex: 1; /* Takes up remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow-y: auto; /* Add scroll if content overflows */
+  margin-left: 300px; /* Avoid overlapping with the left sidebar */
+  margin-right: 400px; /* Avoid overlapping with the right sidebar */
+}
+
 .attachment-section {
   margin-top: 20px;
   width: 100%;
@@ -146,3 +194,4 @@ body, html {
 .attachment-images img:hover {
   transform: scale(1.1);
 }
+
